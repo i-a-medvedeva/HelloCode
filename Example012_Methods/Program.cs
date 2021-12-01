@@ -36,7 +36,7 @@
 
 //Метод 4 - что-то принимает и что-то возвращает (return)
 
-string Method4(int count, string text)
+/* string Method4(int count, string text)
 {
     // int i=0;
     // string result = String.Empty; //задано значение пустая строка, можно также ="";
@@ -58,4 +58,15 @@ string Method4(int count, string text)
 }
 
 string res=Method4(10, "z");//10 раз напечатает текст
-Console.WriteLine(res);
+Console.WriteLine(res); */
+
+//5. Вывод таблицы умножения на экран
+
+for (int i=2; i<=10; i++)
+{
+    for (int j=2; j<=10; j++)
+    {
+        Console.WriteLine($"{i}*{j}={i*j}");
+    }
+    Console.WriteLine(); //выводит пустую строку для разрывов страницы
+}
