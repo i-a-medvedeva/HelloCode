@@ -74,7 +74,7 @@ for (int i=2; i<=10; i++)
 
 
 
-//Задача 1. Дан текст. В тексте нужно все пробелы заменить черточками, 
+/* //Задача 1. Дан текст. В тексте нужно все пробелы заменить черточками, 
 //маленькие буквы "к" заменить большими "К", а большие "С" заменить маленькими"с".
 string text = "- Я думаю, - сказал князь, улыбаясь, - что, "
             +"ежели бы вас послали вместо нашего милого Винценгероде,"
@@ -104,6 +104,41 @@ Console.WriteLine(newText);
 Console.WriteLine();
 
 newText=Replace(newText,'с','С');
-Console.WriteLine(newText);
+Console.WriteLine(newText); */
+
+
+//РАБОТА С МАССИВАМИ
+//Задача 2 Упорядочить массив (сортировка методом выбора, методом минимакса)
+
+int [] arr = {1,5,4,3,2,6,7,1,1};
+void PrintArray (int[] array)
+{
+    int count = array.Length;
+    for(int i=0;i<count; i++)
+    {
+        Console.WriteLine($"{array[i]}");
+    }
+    Console.WriteLine();
+}
+
+PrintArray(arr);
+
+void SelectionSort (int[] array)
+{
+    for(int i=0;i<array.Length-1;i++)
+        {
+            int minPosition = i;
+            for (int j=i+1; j<array.Length;j++)                    //эта строка и 3 след находит позицию 
+            {                                                      // минимального элемента в массиве
+                if(array[j]<array[minPosition]) minPosition=j;
+            }
+        int temporary = array[i];             // эта строка и две след меняют местами
+        array[i]=array[minPosition];          // рассматриваемую i позицию с позицией, где расположен 
+        array[minPosition]=temporary;         // минимальный элемент массива
+        }
+}
+
+SelectionSort(arr);
+PrintArray(arr);
 
 
