@@ -110,32 +110,32 @@ Console.WriteLine(newText); */
 //РАБОТА С МАССИВАМИ
 //Задача 2 Упорядочить массив (сортировка методом выбора, методом минимакса)
 
-int [] arr = {1,5,4,3,2,6,7,1,1};
-void PrintArray (int[] array)
+int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+void PrintArray(int[] array)
 {
     int count = array.Length;
-    for(int i=0;i<count; i++)
+    for (int i = 0; i < count; i++)
     {
-        Console.WriteLine($"{array[i]}");
+        Console.Write($"{array[i]}");
     }
     Console.WriteLine();
 }
 
 PrintArray(arr);
 
-void SelectionSort (int[] array)
+void SelectionSort(int[] array)
 {
-    for(int i=0;i<array.Length-1;i++)
-        {
-            int minPosition = i;
-            for (int j=i+1; j<array.Length;j++)                    //эта строка и 3 след находит позицию 
-            {                                                      // минимального элемента в массиве
-                if(array[j]<array[minPosition]) minPosition=j;
-            }
-        int temporary = array[i];             // эта строка и две след меняют местами
-        array[i]=array[minPosition];          // рассматриваемую i позицию с позицией, где расположен 
-        array[minPosition]=temporary;         // минимальный элемент массива
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)                    //эта строка и 3 след находит позицию 
+        {                                                      // минимального элемента в массиве
+            if (array[j] < array[minPosition]) minPosition = j;
         }
+        int temporary = array[i];             // эта строка и две след меняют местами
+        array[i] = array[minPosition];          // рассматриваемую i позицию с позицией, где расположен 
+        array[minPosition] = temporary;         // минимальный элемент массива
+    }
 }
 
 SelectionSort(arr);
